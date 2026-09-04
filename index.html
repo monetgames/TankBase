@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="《坦克基地 Tank Base》是一款融合 RPG、塔防与 Roguelite 元素的俯视角坦克攻防游戏。保卫基地，构筑装备，循环成长。">
+  <meta name="keywords" content="坦克基地, Tank Base, 独立游戏, Godot, 开源游戏, 塔防, Roguelite, 坦克">
+  <meta property="og:title" content="坦克基地 Tank Base - 俯视角坦克攻防游戏">
+  <meta property="og:description" content="融合 RPG、塔防与 Roguelite 元素的俯视角坦克攻防游戏">
+  <meta property="og:type" content="website">
+  <title>坦克基地 Tank Base - 俯视角坦克攻防游戏</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <nav class="nav container">
+      <a href="#top" class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">TANK BASE</span>
+      </a>
+      <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#features">游戏特色</a></li>
+        <li><a href="#loop">核心玩法</a></li>
+        <li><a href="#gear">装备系统</a></li>
+        <li><a href="#screenshots">实机画面</a></li>
+        <li><a href="https://github.com/monetgames/TankBase" target="_blank" rel="noopener" class="nav-github">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>开源独立游戏 · PC 免费开玩</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="hero-title-cn">坦克基地</span>
+          <span class="hero-title-en">TANK BASE</span>
+        </h1>
+        <p class="hero-subtitle">俯视角坦克攻防 · RPG 成长 · 塔防策略 · Roguelite 构筑</p>
+        <div class="hero-actions">
+          <a href="https://github.com/monetgames/TankBase/releases" class="btn btn-primary" target="_blank" rel="noopener">
+            <span class="btn-icon">▶</span>
+            <span>免费下载</span>
+          </a>
+          <a href="https://github.com/monetgames/TankBase" class="btn btn-outline" target="_blank" rel="noopener">
+            <span class="btn-icon">⌘</span>
+            <span>查看源码</span>
+          </a>
+        </div>
+        <div class="hero-controls">
+          <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 移动 · 鼠标瞄准 · 左键开炮 · 右键护盾
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">1</span>
+            <span class="stat-label">条命通关</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">3</span>
+            <span class="stat-label">核心循环</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">5</span>
+            <span class="stat-label">装备稀有度</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">∞</span>
+            <span class="stat-label">构筑可能</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-grid" aria-hidden="true"></div>
+    </section>
+
+    <section class="features section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">FEATURES</span>
+          <h2 class="section-title">游戏特色</h2>
+          <p class="section-desc">经典俯视角坦克战斗，加入现代 Roguelite 成长与策略构筑。</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">⚔</div>
+            <h3>硬核攻防</h3>
+            <p>玩家坦克与我方基地只有一条命，敌方基地持续生产坦克，必须且战且退、绕圈射击。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">⚙</div>
+            <h3>装备构筑</h3>
+            <p>引擎、轴承、主炮、炮弹、装甲、护盾、特种装置自由搭配，打造专属坦克与基地。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">↻</div>
+            <h3>Meta 成长</h3>
+            <p>击败精英与 BOSS 获得黑匣，永久强化坦克与基地属性，越战越强。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🎲</div>
+            <h3>Roguelite 循环</h3>
+            <p>每次战役携带有限蓝图进入战术背包，金币、模组、装备在战役结束后清零，策略选择决定生死。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="loop section section-dark" id="loop">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">GAME LOOP</span>
+          <h2 class="section-title">核心循环</h2>
+          <p class="section-desc">Meta 成长 → 构筑循环 → 战斗循环，在失败与胜利中不断变强。</p>
+        </div>
+        <div class="loop-steps">
+          <article class="loop-card">
+            <div class="loop-number">01</div>
+            <h3>Meta 循环（指挥部）</h3>
+            <p>战役结束后回到 Meta 循环。消耗战斗中获得的「黑匣」永久提升坦克与基地的基础属性，并从蓝图库中挑选下一次战役的战术背包。</p>
+            <ul class="loop-list">
+              <li>黑匣永久成长</li>
+              <li>战术背包配置</li>
+              <li>资产重置与传承</li>
+            </ul>
+          </article>
+          <div class="loop-arrow" aria-hidden="true">→</div>
+          <article class="loop-card">
+            <div class="loop-number">02</div>
+            <h3>构筑循环（基地）</h3>
+            <p>进入战斗前进行后勤决策：维修基地与坦克、使用蓝图制造装备、消耗模组与金币升阶/强化装备、装配到坦克与基地槽位。</p>
+            <ul class="loop-list">
+              <li>装备制造与回收</li>
+              <li>装备升阶 / 强化</li>
+              <li>坦克 / 基地装配</li>
+            </ul>
+          </article>
+          <div class="loop-arrow" aria-hidden="true">→</div>
+          <article class="loop-card">
+            <div class="loop-number">03</div>
+            <h3>战斗循环（战场）</h3>
+            <p>在随机生成的地图中抵御多波攻势，摧毁敌方基地与坦克，保卫我方基地。拾取金币、模组与道具，为下一段循环积累资源。</p>
+            <ul class="loop-list">
+              <li>多关卡多波次</li>
+              <li>基地补给与维修</li>
+              <li>道具与一次性武器</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gear section" id="gear">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">GEAR SYSTEM</span>
+          <h2 class="section-title">装备系统</h2>
+          <p class="section-desc">蓝图决定潜力，金币铸造装备，模组强化属性。稀有度从白到金，构筑没有唯一解。</p>
+        </div>
+        <div class="gear-layout">
+          <div class="gear-panel">
+            <h3>坦克装备槽</h3>
+            <div class="gear-slots">
+              <div class="gear-slot"><span class="gear-slot-name">引擎</span><span class="gear-slot-type">提升坦克移动速度</span></div>
+              <div class="gear-slot"><span class="gear-slot-name">轴承</span><span class="gear-slot-type">提升炮塔旋转速度</span></div>
+              <div class="gear-slot"><span class="gear-slot-name">主炮</span><span class="gear-slot-type">提升炮弹速度与射击频率</span></div>
+              <div class="gear-slot"><span class="gear-slot-name">炮弹</span><span class="gear-slot-type">提升炮弹伤害与射程</span></div>
+              <div class="gear-slot"><span class="gear-slot-name">装甲</span><span class="gear-slot-type">减少坦克受到的伤害</span></div>
+              <div class="gear-slot"><span class="gear-slot-name">护盾</span><span class="gear-slot-type">提供可激活的能量护盾</span></div>
+              <div class="gear-slot wide"><span class="gear-slot-name">潜渡 / 隐身 / 雷达</span><span class="gear-slot-type">特种装备</span></div>
+            </div>
+          </div>
+          <div class="gear-panel">
+            <h3>基地装备槽</h3>
+            <div class="gear-slots">
+              <div class="gear-slot"><span class="gear-slot-name">EMP</span><span class="gear-slot-type">自动瘫痪靠近基地的敌方坦克</span></div>
+              <div class="gear-slot"><span class="gear-slot-name">壁垒</span><span class="gear-slot-type">提升基地防御力</span></div>
+              <div class="gear-slot"><span class="gear-slot-name">抢修机</span><span class="gear-slot-type">战斗维修坦克，按折扣省金币</span></div>
+              <div class="gear-slot"><span class="gear-slot-name">能量站</span><span class="gear-slot-type">为坦克护盾自动充能</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="rarity-row">
+          <div class="rarity rarity-common">普通</div>
+          <div class="rarity rarity-advanced">高级</div>
+          <div class="rarity rarity-rare">稀有</div>
+          <div class="rarity rarity-epic">神器</div>
+          <div class="rarity rarity-legendary">传说</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshots section section-dark" id="screenshots">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">SCREENSHOTS</span>
+          <h2 class="section-title">实机画面</h2>
+          <p class="section-desc">复古像素军事终端风格，信息密集但不失秩序。</p>
+        </div>
+        <div class="screenshot-grid">
+          <figure class="screenshot">
+            <img src="images/screenshot-title.jpg" alt="坦克基地标题画面">
+            <figcaption>主菜单</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="images/screenshot-combat.jpg" alt="坦克基地战斗画面">
+            <figcaption>战场</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="images/screenshot-build.jpg" alt="坦克基地构筑循环">
+            <figcaption>基地</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="images/screenshot-meta.jpg" alt="坦克基地 Meta 循环">
+            <figcaption>指挥部</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls section" id="controls">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">CONTROLS</span>
+          <h2 class="section-title">操作说明</h2>
+        </div>
+        <div class="controls-grid">
+          <div class="control-group">
+            <h3>移动与射击</h3>
+            <div class="control-item"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>坦克移动</span></div>
+            <div class="control-item"><span class="control-mouse">🖱 鼠标移动</span><span>炮塔瞄准方向</span></div>
+            <div class="control-item"><span class="control-mouse">🖱 鼠标左键</span><span>开炮</span></div>
+          </div>
+          <div class="control-group">
+            <h3>战斗</h3>
+            <div class="control-item"><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd><kbd>5</kbd><kbd>6</kbd><span>道具</span></div>
+            <div class="control-item"><span class="control-mouse">🖱 鼠标右键</span><span>开启 / 关闭护盾</span></div>
+            <div class="control-item"><span class="control-mouse">🖱 鼠标滚轮</span><span>切换武器</span></div>
+          </div>
+          <div class="control-group">
+            <h3>基地交互</h3>
+            <div class="control-item"><kbd>F</kbd><span>在基地范围内维修坦克</span></div>
+            <div class="control-item"><span>进入基地范围自动为护盾充能</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta section">
+      <div class="container cta-inner">
+        <h2>准备好保卫基地了吗？</h2>
+        <p>游戏使用 Godot 引擎开发，免费开源，欢迎下载试玩！</p>
+        <div class="cta-actions">
+          <a href="https://github.com/monetgames/TankBase/releases" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+            <span class="btn-icon">▶</span>
+            <span>免费下载</span>
+          </a>
+          <a href="https://github.com/monetgames/TankBase" class="btn btn-outline btn-large" target="_blank" rel="noopener">
+            <span class="btn-icon">⌘</span>
+            <span>Star on GitHub</span>
+          </a>
+        </div>
+        <div class="cta-repo">
+          <code>git clone https://github.com/monetgames/TankBase.git</code>
+        </div>
+      </div>
+    </section>
+
+    <section class="follow section section-dark" id="follow">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">FOLLOW</span>
+          <h2 class="section-title">关注我</h2>
+        </div>
+        <div class="follow-card">
+          <div class="follow-text">
+            <h3>微信公众号 · 莫奈奈</h3>
+            <p>从零开始的独立游戏开发者。</p>
+          </div>
+          <div class="follow-qr">
+            <img src="images/wechat-qr-code.jpg" alt="微信公众号 莫奈奈 二维码" width="344" height="344" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">◈</span>
+        <span>TANK BASE</span>
+      </div>
+      <p class="footer-copy">© 2026 坦克基地 Tank Base. 制作人 莫奈奈 Monet Games. 开源项目遵循对应仓库许可证.</p>
+      <div class="footer-links">
+        <a href="https://github.com/monetgames/TankBase" target="_blank" rel="noopener">GitHub</a>
+        <a href="#top">回到顶部</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
