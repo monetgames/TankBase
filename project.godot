@@ -12,7 +12,7 @@ config_version=5
 
 config/name="坦克基地"
 config/description="《坦克基地》是一款融合 RPG、塔防与 Roguelite 元素的坦克攻防游戏。"
-config/version="0.2.0"
+config/version="0.3.0"
 run/main_scene="uid://yhbnccsafmod"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://sprites/base_player_256.png"
