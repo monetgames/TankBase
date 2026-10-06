@@ -15,6 +15,9 @@ var _interval_timer: Timer = null           # 波次间隔计时器
 # ===== 配置 =====
 var wave_interval: float = 3.0  # 波次间隔秒数（从配置加载）
 
+# ===== 退出状态 =====
+var _shutting_down: bool = false  # 场景树销毁中（退出游戏）：敌方单位批量移除不判定为波次完成
+
 
 func _ready() -> void:
 	# 创建波次间隔计时器
@@ -69,6 +72,9 @@ func register_enemy(enemy: Node) -> void:
 
 ## 敌方单位被移除时的回调
 func _on_enemy_removed(enemy: Node) -> void:
+	# 退出游戏时场景树销毁会批量移除敌方单位，不视为波次完成
+	if _is_shutting_down():
+		return
 	current_wave_enemies.erase(enemy)
 	# 通知UI更新敌方坦克数量
 	var tank_count = current_wave_enemies.filter(func(e): return is_instance_valid(e) and e.is_in_group("enemy_tanks")).size()
@@ -78,12 +84,26 @@ func _on_enemy_removed(enemy: Node) -> void:
 
 ## 检查波次是否完成
 func _check_wave_completion() -> void:
+	if _is_shutting_down():
+		return
 	# 过滤掉已销毁的节点
 	current_wave_enemies = current_wave_enemies.filter(func(e): return is_instance_valid(e))
 	
 	if current_wave_enemies.is_empty():
 		print("WaveManager: 所有敌方单位已消灭，波次完成")
 		wave_completed.emit(GM.current_stage, GM.current_wave)
+
+
+## 是否处于退出游戏/场景树销毁流程（自身或 GameManager 已脱离场景树）
+func _is_shutting_down() -> bool:
+	return _shutting_down or not is_inside_tree() or GM.is_quitting
+
+
+func _exit_tree() -> void:
+	# 退出游戏：标记销毁并清空波次单位，避免后续批量移除触发波次完成
+	_shutting_down = true
+	stop_interval_timer()
+	current_wave_enemies.clear()
 
 
 ## 生成敌方单位

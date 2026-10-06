@@ -86,6 +86,25 @@ var campaign_started: bool = false					# 当前战役是否已进入过战斗（
 var current_game_status: GameStatus = GameStatus.START
 var is_game_running: bool = false
 
+# ===== 退出状态 =====
+## 是否正在退出游戏：退出过程中节点会陆续脱离 SceneTree，
+## 此时必须停止波次推进/场景切换等逻辑（节点脱离后再调用 get_tree() 会报 "Parameter data.tree is null"）
+var is_quitting: bool = false
+
+
+func _notification(what: int) -> void:
+	# 关窗口 / 终止进程 / 场景树销毁：标记退出，供波次等系统查询
+	if what == NOTIFICATION_WM_CLOSE_REQUEST or what == NOTIFICATION_EXIT_TREE:
+		is_quitting = true
+
+
+## 安全获取 SceneTree：节点已脱离场景树（退出游戏销毁场景树时）返回 null。
+func get_tree_safe() -> SceneTree:
+	if not is_inside_tree():
+		return null
+	return get_tree()
+
+
 func _ready() -> void:
 	if not is_in_group(GROUP_NAME):
 		add_to_group(GROUP_NAME)
@@ -359,6 +378,9 @@ func is_campaign_final_stage(stage: int) -> bool:
 
 ## 进入下一波次
 func advance_to_next_wave() -> void:
+	# 退出游戏时不再推进波次
+	if is_quitting or not is_inside_tree():
+		return
 	if current_wave >= ConfigLoader.max_waves_per_stage:
 		print("GameManager: 关卡 ", current_stage, " 完成")
 		combat_state = CombatState.STAGE_COMPLETE
@@ -376,34 +398,34 @@ func advance_to_next_wave() -> void:
 
 ## 关卡通关后的捡金币阶段（不弹商店，捡完后进下一关构筑循环）
 func _start_stage_loot_gather_phase() -> void:
+	# 退出游戏时节点已脱离 SceneTree，不能再创建计时器
+	var tree := get_tree_safe()
+	if tree == null:
+		return
 	var duration: float = ConfigLoader.loot_gather_interval
 	print("GameManager: 关卡通关，捡金币阶段 %.1f 秒" % duration)
 	loot_gather_started.emit(duration)
-	# 关闭窗口时节点已脱离 SceneTree，不能再创建计时器。
-	var tree := get_tree()
-	if tree == null:
-		return
 	await tree.create_timer(duration).timeout
 	# 阶段结束后进入下一关（若期间未触发其他流程；已离开战斗循环如切到结算界面则不继续）
-	if combat_state == CombatState.STAGE_COMPLETE and current_loop == GameLoop.COMBAT and get_tree() != null and is_instance_valid(get_tree().current_scene):
+	if combat_state == CombatState.STAGE_COMPLETE and current_loop == GameLoop.COMBAT and is_inside_tree() and is_instance_valid(tree.current_scene):
 		advance_to_next_stage()
 
 
 ## 启动捡金币阶段（不暂停游戏，坦克可自由移动）
 func _start_loot_gather_phase() -> void:
+	# 退出游戏时节点已脱离 SceneTree，不能再创建计时器
+	var tree := get_tree_safe()
+	if tree == null:
+		return
 	combat_state = CombatState.WAVE_COMPLETE
 	var duration: float = ConfigLoader.loot_gather_interval
 	print("GameManager: 捡金币阶段 %.1f 秒" % duration)
 	loot_gather_started.emit(duration)
 	# 用单次计时器在阶段结束后弹商店
-	# 关闭窗口时节点已脱离 SceneTree，不能再创建计时器。
-	var tree := get_tree()
-	if tree == null:
-		return
 	await tree.create_timer(duration).timeout
 	# 阶段结束后如果仍在战斗场景且未进入新波次，弹商店
 	# （已离开战斗循环如切到结算界面则不弹，防止从结算界面自动跳回战斗）
-	if combat_state == CombatState.WAVE_COMPLETE and current_loop == GameLoop.COMBAT and get_tree() != null and is_instance_valid(get_tree().current_scene):
+	if combat_state == CombatState.WAVE_COMPLETE and current_loop == GameLoop.COMBAT and is_inside_tree() and is_instance_valid(tree.current_scene):
 		_open_wave_shop()
 
 
@@ -620,6 +642,9 @@ func _on_combat_scene_loaded(node: Node) -> void:
 
 ## 地图加载完成回调（通过信号触发）
 func _on_map_loaded() -> void:
+	# 退出游戏时不再启动战斗
+	if is_quitting or not is_inside_tree():
+		return
 	print("GameManager: 收到地图加载完成信号，当前玩家基地数量: ", player_bases.size())
 	print("GameManager: 地图加载时 equipped 数量=%d" % GameState.equipped.size())
 	# 让所有玩家基地重新应用装备属性（确保在场景完全加载后生效）
@@ -636,6 +661,9 @@ func _on_map_loaded() -> void:
 
 ## 波次完成回调
 func _on_wave_completed(_stage: int, _wave: int) -> void:
+	# 退出游戏时场景树正在销毁
+	if is_quitting or not is_inside_tree():
+		return
 	combat_state = CombatState.WAVE_COMPLETE
 	advance_to_next_wave()
 
