@@ -5,7 +5,7 @@ description: 通过 godot-mcp-bridge 的 MCP 工具驱动 TankBase 的 Godot 编
 
 # 通过 MCP 驱动 Godot（godot-mcp-bridge）
 
-TankBase 用 [godot-mcp-bridge](https://github.com/TomasLucasUTN/godot-mcp-bridge) 让 AI agent 直接操作 Godot 编辑器与运行中的游戏。编辑器插件以 git 子模块放在 `addons/godot_mcp`（fork：[monetgames/godot-mcp-bridge](https://github.com/monetgames/godot-mcp-bridge)，基于上游 v1.2.1，另含 Godot 4.4 兼容与 snippet 缓存路径修复）。
+TankBase 用 [godot-mcp-bridge](https://github.com/monetgames/godot-mcp-bridge) 让 AI agent 直接操作 Godot 编辑器与运行中的游戏。编辑器插件以 git 子模块放在 `addons/godot_mcp`（fork：[monetgames/godot-mcp-bridge](https://github.com/monetgames/godot-mcp-bridge)，基于上游 v1.2.1，另含 Godot 4.4 兼容与 snippet 缓存路径修复）。
 
 agent 侧无需安装任何 Godot 插件，只要 MCP 客户端配置里拉起 server 即可：
 
