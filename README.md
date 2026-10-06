@@ -43,7 +43,7 @@
 
 ## 🤖 用 AI 开发本项目（godot-mcp-bridge）
 
-本项目支持使用 [godot-mcp-bridge](https://github.com/TomasLucasUTN/godot-mcp-bridge) 开发：MCP server（`npx godot-mcp-bridge`）+ 编辑器插件（`addons/godot_mcp` git 子模块），AI Agent 可以直接读写场景与脚本、运行游戏并截图、校验脚本编译、驱动运行中的游戏。使用说明见 [.agents/skills/godot-mcp-bridge/](.agents/skills/godot-mcp-bridge/SKILL.md)。
+本项目支持使用 [godot-mcp-bridge](https://github.com/monetgames/godot-mcp-bridge) 开发：MCP server（`npx godot-mcp-bridge`）+ 编辑器插件（`addons/godot_mcp` git 子模块），AI Agent 可以直接读写场景与脚本、运行游戏并截图、校验脚本编译、驱动运行中的游戏。使用说明见 [.agents/skills/godot-mcp-bridge/](.agents/skills/godot-mcp-bridge/SKILL.md)。
 
 ## 📁 目录结构
 
