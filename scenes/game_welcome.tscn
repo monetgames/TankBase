@@ -1,0 +1,314 @@
+[gd_scene format=3 uid="uid://c8ucd2e042exr"]
+
+[ext_resource type="Script" uid="uid://cacx52jvvpmlw" path="res://scripts/game_welcome.gd" id="1_welcome"]
+[ext_resource type="Texture2D" uid="uid://bsb6xuh6ehfkm" path="res://sprites/tank_player_body_sheet.png" id="2_body"]
+[ext_resource type="Texture2D" uid="uid://cign4xpaua600" path="res://sprites/tank_player_turret.png" id="3_turret"]
+[ext_resource type="Texture2D" uid="uid://bx3tcp2goh310" path="res://sprites/base_player_sheet.png" id="4_base"]
+[ext_resource type="Texture2D" uid="uid://m3t8ass3w7e5" path="res://sprites/about/qr-code-tankbase-official.png" id="5_qr_official"]
+[ext_resource type="Texture2D" uid="uid://dl7hxbw616ygw" path="res://sprites/about/qr-code-wechat.png" id="6_qr_wechat"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_body0"]
+atlas = ExtResource("2_body")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_body1"]
+atlas = ExtResource("2_body")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_body"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_body0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_body1")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_base0"]
+atlas = ExtResource("4_base")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_base1"]
+atlas = ExtResource("4_base")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_base2"]
+atlas = ExtResource("4_base")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_base3"]
+atlas = ExtResource("4_base")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_base"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_base0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_base1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_base2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_base3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="GameWelcome" type="Control" unique_id=1793059177]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_welcome")
+
+[node name="Background" type="ColorRect" parent="." unique_id=237936938]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0470588, 0.0705882, 0.0392157, 1)
+
+[node name="CenterLayout" type="CenterContainer" parent="." unique_id=1202242248]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterLayout" unique_id=1220051255]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterLayout/VBox" unique_id=1177095181]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+theme_override_colors/font_shadow_color = Color(0.0117647, 0.14902, 0.00392157, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 48
+text = "坦 克 基 地"
+horizontal_alignment = 1
+
+[node name="SubTitleLabel" type="Label" parent="CenterLayout/VBox" unique_id=140402598]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.937255, 0.623529, 0.152941, 1)
+theme_override_font_sizes/font_size = 12
+text = "T A N K   B A S E"
+horizontal_alignment = 1
+
+[node name="IconRow" type="HBoxContainer" parent="CenterLayout/VBox" unique_id=46477378]
+layout_mode = 2
+alignment = 1
+
+[node name="TankIcon" type="Control" parent="CenterLayout/VBox/IconRow" unique_id=55807]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+
+[node name="Body" type="AnimatedSprite2D" parent="CenterLayout/VBox/IconRow/TankIcon" unique_id=84956041]
+position = Vector2(24, 24)
+sprite_frames = SubResource("SpriteFrames_body")
+animation = &"idle"
+
+[node name="Turret" type="Sprite2D" parent="CenterLayout/VBox/IconRow/TankIcon" unique_id=768396224]
+position = Vector2(24, 24)
+texture = ExtResource("3_turret")
+
+[node name="BaseIcon" type="Control" parent="CenterLayout/VBox/IconRow" unique_id=231185838]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+
+[node name="Base" type="AnimatedSprite2D" parent="CenterLayout/VBox/IconRow/BaseIcon" unique_id=512204821]
+position = Vector2(24, 24)
+sprite_frames = SubResource("SpriteFrames_base")
+animation = &"idle"
+
+[node name="ContinueGameButton" type="Button" parent="CenterLayout/VBox" unique_id=1100648639]
+custom_minimum_size = Vector2(229, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "继 续 游 戏"
+
+[node name="StartGameButton" type="Button" parent="CenterLayout/VBox" unique_id=1148839072]
+custom_minimum_size = Vector2(229, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "开 始 游 戏"
+
+[node name="SettingsButton" type="Button" parent="CenterLayout/VBox" unique_id=1548821266]
+custom_minimum_size = Vector2(229, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 22
+text = "设 置"
+
+[node name="AboutButton" type="Button" parent="CenterLayout/VBox" unique_id=2139406897]
+custom_minimum_size = Vector2(229, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 22
+text = "关 于"
+
+[node name="ExitButton" type="Button" parent="CenterLayout/VBox" unique_id=1624904199]
+custom_minimum_size = Vector2(229, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "退 出 游 戏"
+
+[node name="HintLabel" type="Label" parent="CenterLayout/VBox" unique_id=1815481347]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.478431, 0.521569, 0.439216, 1)
+theme_override_font_sizes/font_size = 12
+text = "WASD 移动 · 鼠标瞄准 · 左键开炮 · 右键护盾"
+horizontal_alignment = 1
+
+[node name="AboutLayer" type="CanvasLayer" parent="." unique_id=215580538]
+visible = false
+
+[node name="Overlay" type="Control" parent="AboutLayer" unique_id=1728364308]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="AboutLayer/Overlay" unique_id=298539166]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0470588, 0.0705882, 0.0392157, 0.88)
+
+[node name="Center" type="CenterContainer" parent="AboutLayer/Overlay" unique_id=1228739184]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AboutPanel" type="PanelContainer" parent="AboutLayer/Overlay/Center" unique_id=1808536842]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="AboutLayer/Overlay/Center/AboutPanel" unique_id=925252369]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="AboutLayer/Overlay/Center/AboutPanel/VBox" unique_id=1216696332]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+theme_override_font_sizes/font_size = 28
+text = "关 于"
+horizontal_alignment = 1
+
+[node name="VersionLabel" type="Label" parent="AboutLayer/Overlay/Center/AboutPanel/VBox" unique_id=1783740108]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.478431, 0.521569, 0.439216, 1)
+theme_override_font_sizes/font_size = 12
+text = "版本号：0.0.0"
+horizontal_alignment = 1
+
+[node name="IntroLabel" type="Label" parent="AboutLayer/Overlay/Center/AboutPanel/VBox" unique_id=1709390614]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 14
+text = "《坦克基地》是一款融合 RPG、塔防与 Roguelite 元素的坦克攻防游戏。"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RepoRow" type="HBoxContainer" parent="AboutLayer/Overlay/Center/AboutPanel/VBox" unique_id=784965898]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="RepoLabel" type="Label" parent="AboutLayer/Overlay/Center/AboutPanel/VBox/RepoRow" unique_id=1130302713]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 14
+text = "游戏免费开源，网址：github.com/monetgames/TankBase"
+
+[node name="CopyUrlButton" type="Button" parent="AboutLayer/Overlay/Center/AboutPanel/VBox/RepoRow" unique_id=1164499385]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+theme_override_colors/font_pressed_color = Color(0.796078, 0.933333, 0.6, 1)
+theme_override_colors/font_hover_color = Color(0.796078, 0.933333, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "复制网址"
+flat = true
+
+[node name="SepLine" type="HSeparator" parent="AboutLayer/Overlay/Center/AboutPanel/VBox" unique_id=1106656033]
+layout_mode = 2
+
+[node name="QrRow" type="HBoxContainer" parent="AboutLayer/Overlay/Center/AboutPanel/VBox" unique_id=1426199753]
+layout_mode = 2
+theme_override_constants/separation = 88
+alignment = 1
+
+[node name="OfficialCol" type="VBoxContainer" parent="AboutLayer/Overlay/Center/AboutPanel/VBox/QrRow" unique_id=1774726703]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="OfficialLabel" type="Label" parent="AboutLayer/Overlay/Center/AboutPanel/VBox/QrRow/OfficialCol" unique_id=1979017691]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+text = "《坦克基地》官网"
+horizontal_alignment = 1
+
+[node name="OfficialQr" type="TextureRect" parent="AboutLayer/Overlay/Center/AboutPanel/VBox/QrRow/OfficialCol" unique_id=1998305619]
+custom_minimum_size = Vector2(132, 132)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_qr_official")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WechatCol" type="VBoxContainer" parent="AboutLayer/Overlay/Center/AboutPanel/VBox/QrRow" unique_id=1285124556]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="WechatLabel" type="Label" parent="AboutLayer/Overlay/Center/AboutPanel/VBox/QrRow/WechatCol" unique_id=192257229]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+text = "微信公众号 · 莫奈奈"
+horizontal_alignment = 1
+
+[node name="WechatQr" type="TextureRect" parent="AboutLayer/Overlay/Center/AboutPanel/VBox/QrRow/WechatCol" unique_id=2080981223]
+custom_minimum_size = Vector2(132, 132)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("6_qr_wechat")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AboutCloseButton" type="Button" parent="AboutLayer/Overlay/Center/AboutPanel/VBox" unique_id=1388933161]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+focus_mode = 0
+text = "关闭"

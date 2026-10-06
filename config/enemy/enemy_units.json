@@ -1,0 +1,201 @@
+{
+  "_comment": "敌方单位配置文件 - 包含坦克和基地的基础属性",
+  "_scaling_formula": "耐久=基础×HP关卡曲线；伤害=基础×伤害关卡曲线；防御=基础×防御关卡曲线×轻微波次曲线，并按等级封顶。",
+  "_scaling_note": "耐久、伤害和防御独立缩放，避免 HP 与防御同倍率导致有效耐久双重膨胀。BOSS 使用温和耐久曲线并受独立防御上限保护。",
+  "scaling": {
+    "stage_hp_multiplier": 1.08,
+    "stage_damage_multiplier": 1.05,
+    "stage_defense_multiplier": 1.03,
+    "wave_hp_multiplier": 1.0,
+    "wave_damage_multiplier": 1.0,
+    "wave_defense_multiplier": 1.01,
+    "boss_stage_hp_multiplier": 1.065,
+    "boss_stage_damage_multiplier": 1.04,
+    "boss_stage_defense_multiplier": 1.02,
+    "defense_cap_by_level": {
+      "normal": 100,
+      "elite": 135,
+      "boss": 170
+    }
+  },
+  "tanks": {
+    "normal": {
+      "level": "normal",
+      "max_health": 150,
+      "defense": 0,
+      "shell_damage": 20,
+      "dps": 8,
+      "shoot_cooldown": 2.5,
+      "turret_turn_speed": 100.0,
+      "move_speed": 2.0,
+      "shell_speed": 14.0,
+      "shell_range": 8.0,
+      "detect_range": 8.0,
+      "scout_base_detect_range": 15.0,
+      "fire_range": 6.0,
+      "roam_interval_min": 2.0,
+      "roam_interval_max": 4.0,
+      "chase_range_multiplier": 2.0,
+      "defend_radius": 3.0,
+      "return_threshold": 8.0,
+      "ai_intelligence": 0.6,
+      "_description": "普通坦克 - 基础敌方单位，数量多但能力一般"
+    },
+    "elite": {
+      "level": "elite",
+      "max_health": 500,
+      "defense": 50,
+      "shell_damage": 60,
+      "dps": 30,
+      "shoot_cooldown": 2.0,
+      "turret_turn_speed": 110.0,
+      "move_speed": 2.5,
+      "shell_speed": 15.0,
+      "shell_range": 9.0,
+      "detect_range": 9.0,
+      "scout_base_detect_range": 18.0,
+      "fire_range": 8.0,
+      "roam_interval_min": 1.5,
+      "roam_interval_max": 3.0,
+      "chase_range_multiplier": 2.0,
+      "defend_radius": 4.0,
+      "return_threshold": 10.0,
+      "ai_intelligence": 0.9,
+      "_description": "精英坦克 - 强化单位，具有更高的属性和更智能的AI（智能度 0.9，射击精度更高）"
+    },
+    "boss": {
+      "level": "boss",
+      "max_health": 1600,
+      "defense": 70,
+      "shell_damage": 120,
+      "dps": 100,
+      "shoot_cooldown": 1.5,
+      "turret_turn_speed": 120.0,
+      "move_speed": 1.5,
+      "shell_speed": 16.0,
+      "shell_range": 10.0,
+      "detect_range": 12.0,
+      "scout_base_detect_range": 24.0,
+      "fire_range": 11.0,
+      "roam_interval_min": 3.0,
+      "roam_interval_max": 5.0,
+      "chase_range_multiplier": 2.0,
+      "defend_radius": 5.0,
+      "return_threshold": 12.0,
+      "ai_intelligence": 1.0,
+      "boss_rage": {
+        "rage_interval": 25.0,
+        "rage_chance": 0.3,
+        "rage_duration": 5.0,
+        "rage_fire_rate_multiplier": 1.3
+      },
+      "_description": "BOSS坦克 - 最强单位，高耐久高伤害但移动较慢；每20-30s有30%概率进入狂暴（射速×1.3，持续5s）"
+    }
+  },
+  "bases": {
+    "normal": {
+      "level": "normal",
+      "max_health": 300,
+      "defense": 0,
+      "max_tanks": 4,
+      "production_interval": 8.0,
+      "tank_types": [
+        "normal"
+      ],
+      "ai_role_sequence": [
+        "chase",
+        "chase",
+        "detect",
+        "defend"
+      ],
+      "turret_damage": 15,
+      "turret_detect_range": 8.0,
+      "turret_range": 8.0,
+      "turret_cooldown": 3.0,
+      "_description": "普通基地 - 仅生产普通坦克，最大在场4个；炮塔伤害15/探测与开火8u/冷却3s"
+    },
+    "elite": {
+      "level": "elite",
+      "max_health": 800,
+      "defense": 50,
+      "max_tanks": 6,
+      "production_interval": 12.0,
+      "tank_types": [
+        "normal",
+        "elite"
+      ],
+      "ai_role_sequence": [
+        "chase",
+        "chase",
+        "chase",
+        "detect",
+        "detect",
+        "defend"
+      ],
+      "turret_damage": 30,
+      "turret_detect_range": 10.0,
+      "turret_range": 10.0,
+      "turret_cooldown": 2.5,
+      "_description": "精英基地 - 生产普通和精英坦克，最大在场6个；炮塔伤害30/探测与开火10u/冷却2.5s"
+    },
+    "boss": {
+      "level": "boss",
+      "max_health": 2600,
+      "defense": 70,
+      "max_tanks": 5,
+      "boss_tank_max_per_base": 1,
+      "production_interval": 20.0,
+      "tank_types": [
+        "normal",
+        "elite",
+        "boss"
+      ],
+      "ai_role_sequence": [
+        "chase",
+        "chase",
+        "chase",
+        "chase",
+        "detect",
+        "detect",
+        "detect",
+        "defend"
+      ],
+      "turret_damage": 40,
+      "turret_detect_range": 12.0,
+      "turret_range": 12.0,
+      "turret_cooldown": 2.0,
+      "_description": "BOSS基地 - 生产所有类型坦克，最大在场5个；炮塔伤害40/探测与开火12u/冷却2s"
+    }
+  },
+  "_field_descriptions": {
+    "tanks": {
+      "level": "等级（normal/elite/boss）",
+      "max_health": "基础耐久值",
+      "defense": "防御值 - 用于伤害减免计算",
+      "shell_damage": "炮弹伤害 - 单发炮弹造成的伤害",
+      "dps": "每秒伤害 - 持续输出能力",
+      "shoot_cooldown": "射击冷却（秒）- 开火间隔下限（普2.5/精2.0/BOSS1.5）",
+      "move_speed": "移动速度（单位/秒）",
+      "shell_speed": "炮弹速度（单位/秒） - 需大于移动速度",
+      "shell_range": "炮弹射程（单位） - 最大飞行距离",
+      "detect_range": "追击/防守模式探测范围（单位） - 发现玩家坦克的距离",
+      "scout_base_detect_range": "侦察模式基地发现半径（单位） - 仅 DETECT 状态发现玩家基地；独立于玩家坦克探测范围",
+      "fire_range": "开火范围（单位） - 开始攻击的距离",
+      "ai_intelligence": "AI智能度（0-1） - 影响决策质量和反应速度",
+      "boss_rage": "BOSS狂暴配置（仅boss） - rage_interval 判定间隔s / rage_chance 触发概率 / rage_duration 持续s / rage_fire_rate_multiplier 射速倍率"
+    },
+    "bases": {
+      "level": "等级（normal/elite/boss）",
+      "max_health": "基础耐久值",
+      "defense": "防御值 - 用于伤害减免计算",
+      "max_tanks": "最大在场坦克数 - 同时存在的坦克上限",
+      "production_interval": "生产间隔（秒） - 生产新坦克的时间间隔",
+      "tank_types": "可生产的坦克类型列表",
+      "ai_role_sequence": "敌方基地固定 AI 编队（chase/detect/defend），按出生顺序循环；追击型数量大于侦察型，侦察型远大于防守型",
+      "turret_damage": "炮塔单发伤害 - 普15/精30/BOSS40",
+      "turret_detect_range": "炮塔探测玩家坦克的范围（单位）",
+      "turret_range": "炮塔开火射程（单位） - 普8/精10/BOSS12",
+      "turret_cooldown": "炮塔射击冷却（秒） - 普3/精2.5/BOSS2"
+    }
+  }
+}

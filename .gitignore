@@ -1,0 +1,27 @@
+# Godot
+.godot/
+project.godot.bak
+*.uid
+
+# 系统文件
+.DS_Store
+Thumbs.db
+.env
+
+# MCP 插件缓存
+addons/godot_mcp/cache/
+
+# IDE
+.vscode/
+.codebuddy/
+
+# 临时文件
+tmp/
+
+# output 目录整体忽略，部分放行
+output/*
+!output/*_preview
+
+# 工具脚本
+tools/*
+!tools/*.py

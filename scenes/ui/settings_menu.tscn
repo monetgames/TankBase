@@ -1,0 +1,441 @@
+[gd_scene format=3 uid="uid://c7m31n4cqxq35"]
+
+[ext_resource type="Script" uid="uid://bftrar78sv44y" path="res://scripts/ui/settings_menu.gd" id="1_sm"]
+
+[node name="SettingsMenu" type="CanvasLayer" unique_id=517347469]
+script = ExtResource("1_sm")
+
+[node name="Overlay" type="Control" parent="." unique_id=1349800093]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Overlay" unique_id=374732971]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0470588, 0.0705882, 0.0392157, 0.88)
+
+[node name="Center" type="CenterContainer" parent="Overlay" unique_id=485749406]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Overlay/Center" unique_id=311612510]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Overlay/Center/Panel" unique_id=1187994243]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="Overlay/Center/Panel/VBox" unique_id=834528825]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 32
+text = "设 置"
+horizontal_alignment = 1
+
+[node name="MusicRow" type="HBoxContainer" parent="Overlay/Center/Panel/VBox" unique_id=1501759028]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MusicLabel" type="Label" parent="Overlay/Center/Panel/VBox/MusicRow" unique_id=466591958]
+custom_minimum_size = Vector2(72, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 14
+text = "音乐音量"
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Overlay/Center/Panel/VBox/MusicRow" unique_id=1314734901]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="MusicValue" type="Label" parent="Overlay/Center/Panel/VBox/MusicRow" unique_id=1958587591]
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.937255, 0.623529, 0.152941, 1)
+theme_override_font_sizes/font_size = 14
+text = "100%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SfxRow" type="HBoxContainer" parent="Overlay/Center/Panel/VBox" unique_id=1479721485]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SfxLabel" type="Label" parent="Overlay/Center/Panel/VBox/SfxRow" unique_id=430797040]
+custom_minimum_size = Vector2(72, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 14
+text = "音效音量"
+vertical_alignment = 1
+
+[node name="SfxSlider" type="HSlider" parent="Overlay/Center/Panel/VBox/SfxRow" unique_id=1270867084]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="SfxValue" type="Label" parent="Overlay/Center/Panel/VBox/SfxRow" unique_id=1441902163]
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.937255, 0.623529, 0.152941, 1)
+theme_override_font_sizes/font_size = 14
+text = "100%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ScreenRow" type="HBoxContainer" parent="Overlay/Center/Panel/VBox" unique_id=1674092617]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ScreenLabel" type="Label" parent="Overlay/Center/Panel/VBox/ScreenRow" unique_id=642307116]
+custom_minimum_size = Vector2(72, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 14
+text = "屏幕模式"
+vertical_alignment = 1
+
+[node name="ScreenButton" type="Button" parent="Overlay/Center/Panel/VBox/ScreenRow" unique_id=630699710]
+custom_minimum_size = Vector2(180, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_focus_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_colors/font_pressed_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.847059, 0.878431, 0.784314, 1)
+text = "窗口模式"
+
+[node name="TutorialRow" type="HBoxContainer" parent="Overlay/Center/Panel/VBox" unique_id=967150266]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TutorialLabel" type="Label" parent="Overlay/Center/Panel/VBox/TutorialRow" unique_id=1412268570]
+custom_minimum_size = Vector2(72, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 14
+text = "新手指引"
+vertical_alignment = 1
+
+[node name="TutorialButton" type="Button" parent="Overlay/Center/Panel/VBox/TutorialRow" unique_id=1220081884]
+custom_minimum_size = Vector2(180, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_focus_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_colors/font_pressed_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.847059, 0.878431, 0.784314, 1)
+text = "开启"
+
+[node name="ManualButton" type="Button" parent="Overlay/Center/Panel/VBox" unique_id=1031046361]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+focus_mode = 0
+text = "操作手册"
+
+[node name="MenuButton" type="Button" parent="Overlay/Center/Panel/VBox" unique_id=1807668969]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "返回主菜单"
+
+[node name="CloseButton" type="Button" parent="Overlay/Center/Panel/VBox" unique_id=142579204]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "返回游戏"
+
+[node name="ManualCenter" type="CenterContainer" parent="Overlay" unique_id=1478795907]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="ManualPanel" type="PanelContainer" parent="Overlay/ManualCenter" unique_id=726608815]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Overlay/ManualCenter/ManualPanel" unique_id=1177301703]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox" unique_id=1827343957]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+theme_override_font_sizes/font_size = 24
+text = "操作手册"
+horizontal_alignment = 1
+
+[node name="ManualList" type="VBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox" unique_id=1221686307]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RowMouseMove" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList" unique_id=1758641677]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Keys" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseMove" unique_id=354287369]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Cap" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseMove/Keys" unique_id=1202713671]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseMove/Keys/Cap" unique_id=1740931518]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "鼠标移动"
+
+[node name="Desc" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseMove" unique_id=1882783763]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "炮塔瞄准"
+
+[node name="RowMouseLeft" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList" unique_id=1739450033]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Keys" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseLeft" unique_id=1689682934]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Cap" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseLeft/Keys" unique_id=270637244]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseLeft/Keys/Cap" unique_id=1173550905]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "鼠标左键"
+
+[node name="Desc" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseLeft" unique_id=339430179]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "开炮"
+
+[node name="RowMouseRight" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList" unique_id=1748599059]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Keys" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseRight" unique_id=16376857]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Cap" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseRight/Keys" unique_id=129701041]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseRight/Keys/Cap" unique_id=1523084442]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "鼠标右键"
+
+[node name="Desc" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseRight" unique_id=451469935]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "能量护盾"
+
+[node name="RowMouseWheel" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList" unique_id=1919315745]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Keys" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseWheel" unique_id=1070860310]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Cap" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseWheel/Keys" unique_id=1032078871]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseWheel/Keys/Cap" unique_id=758346072]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "鼠标滚轮"
+
+[node name="Desc" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowMouseWheel" unique_id=1897663074]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "切换武器"
+
+[node name="RowWASD" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList" unique_id=567757485]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Keys" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowWASD" unique_id=160545688]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="CapW" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowWASD/Keys" unique_id=338590004]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowWASD/Keys/CapW" unique_id=915123640]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "W"
+
+[node name="CapA" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowWASD/Keys" unique_id=693339961]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowWASD/Keys/CapA" unique_id=1255915772]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "A"
+
+[node name="CapS" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowWASD/Keys" unique_id=519127173]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowWASD/Keys/CapS" unique_id=406639102]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "S"
+
+[node name="CapD" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowWASD/Keys" unique_id=432200322]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowWASD/Keys/CapD" unique_id=95664051]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "D"
+
+[node name="Desc" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowWASD" unique_id=1788092681]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "移动坦克"
+
+[node name="RowF" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList" unique_id=2025816011]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Keys" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowF" unique_id=1962940399]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Cap" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowF/Keys" unique_id=520295721]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowF/Keys/Cap" unique_id=2057480340]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "F"
+
+[node name="Desc" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowF" unique_id=1496384309]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "在基地范围内维修坦克"
+
+[node name="RowItems" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList" unique_id=700751083]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Keys" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowItems" unique_id=41632918]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Cap1" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowItems/Keys" unique_id=2065598013]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowItems/Keys/Cap1" unique_id=269748399]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "1"
+
+[node name="CapDots" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowItems/Keys" unique_id=735329959]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowItems/Keys/CapDots" unique_id=1485916411]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "…"
+
+[node name="Cap6" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowItems/Keys" unique_id=717368460]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowItems/Keys/Cap6" unique_id=243229630]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "6"
+
+[node name="Desc" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowItems" unique_id=1595054598]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "使用道具"
+
+[node name="RowEsc" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList" unique_id=292469645]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Keys" type="HBoxContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowEsc" unique_id=396582911]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Cap" type="PanelContainer" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowEsc/Keys" unique_id=2105167805]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowEsc/Keys/Cap" unique_id=552376441]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "ESC"
+
+[node name="Desc" type="Label" parent="Overlay/ManualCenter/ManualPanel/VBox/ManualList/RowEsc" unique_id=1660293963]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "打开 / 关闭设置窗口"
+
+[node name="ManualCloseButton" type="Button" parent="Overlay/ManualCenter/ManualPanel/VBox" unique_id=816186206]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+focus_mode = 0
+text = "关闭"

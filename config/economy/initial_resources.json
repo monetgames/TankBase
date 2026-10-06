@@ -1,0 +1,17 @@
+{
+  "_comment": "战役初始资源配置。四种核心装备制造许可不占背包；initial_backpack_capacity 仅计算九种可选类型，初始 2 格、满级 8 格。initial_blueprints 为各类型初始研究等级。",
+  "initial_gold": 800,
+  "initial_modules": 0,
+  "initial_black_boxes": 0,
+  "initial_backpack_capacity": 2,
+  "initial_equipment_card_capacity": 2,
+  "max_equipment_card_capacity": 8,
+  "equipment_card_reward_campaigns": [1, 2, 3, 5, 7, 9],
+  "initial_blueprints": [
+    { "type": "engine", "rarity": 1, "rarity_name": "白色" },
+    { "type": "bearing", "rarity": 1, "rarity_name": "白色" },
+    { "type": "main_gun", "rarity": 1, "rarity_name": "白色" },
+    { "type": "shell", "rarity": 1, "rarity_name": "白色" },
+    { "type": "repair_machine", "rarity": 1, "rarity_name": "白色" }
+  ]
+}

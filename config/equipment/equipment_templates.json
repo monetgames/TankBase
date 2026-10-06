@@ -1,0 +1,763 @@
+{
+  "_comment": "装备模板配置文件 - 定义所有装备类型的属性模板。属性键名对齐运行时读取方（tank_player.gd / base_player.gd / equipment_system.gd）；强化 +1/+2/+3 由 equipment_system.gd 对全部属性 ×1.1/×1.25/×1.5",
+  "_description": "每个装备包含 type(类型), rarity(稀有度1-5), attributes(属性字典), craft_cost(制造费用)",
+  "enhancement": {
+    "_comment": "装备强化配置：强化 +1/+2/+3 的费用与成功率；module_cost=模组费、gold_cost=金币费、success_rate=成功率(0-1)、attribute_multiplier=属性倍率",
+    "levels": [
+      {
+        "module_cost": 1,
+        "gold_cost": 100,
+        "success_rate": 1.0,
+        "attribute_multiplier": 1.1
+      },
+      {
+        "module_cost": 2,
+        "gold_cost": 200,
+        "success_rate": 0.8,
+        "attribute_multiplier": 1.25
+      },
+      {
+        "module_cost": 4,
+        "gold_cost": 300,
+        "success_rate": 0.5,
+        "attribute_multiplier": 1.5
+      }
+    ]
+  },
+  "tank_equipment": {
+    "_comment": "坦克装备类型",
+    "engine": {
+      "_description": "引擎 - 提供坦克移动速度加成",
+      "templates": [
+        {
+          "type": "engine",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "move_speed_bonus": 0.5
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "engine",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "move_speed_bonus": 1.0
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "engine",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "move_speed_bonus": 1.5
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "engine",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "move_speed_bonus": 2.0
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "engine",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "move_speed_bonus": 2.5
+          },
+          "craft_cost": 8100
+        }
+      ]
+    },
+    "bearing": {
+      "_description": "轴承 - 提供炮台旋转速度加成",
+      "templates": [
+        {
+          "type": "bearing",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "turret_rotation_bonus": 15.0
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "bearing",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "turret_rotation_bonus": 30.0
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "bearing",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "turret_rotation_bonus": 45.0
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "bearing",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "turret_rotation_bonus": 60.0
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "bearing",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "turret_rotation_bonus": 75.0
+          },
+          "craft_cost": 8100
+        }
+      ]
+    },
+    "main_gun": {
+      "_description": "主炮 - 提供炮弹速度和射击冷却加成",
+      "templates": [
+        {
+          "type": "main_gun",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "shell_speed": 8.0,
+            "shoot_cooldown_reduction": 0.0
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "main_gun",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "shell_speed": 10.0,
+            "shoot_cooldown_reduction": 0.15
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "main_gun",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "shell_speed": 12.0,
+            "shoot_cooldown_reduction": 0.3
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "main_gun",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "shell_speed": 14.0,
+            "shoot_cooldown_reduction": 0.45
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "main_gun",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "shell_speed": 16.0,
+            "shoot_cooldown_reduction": 0.6
+          },
+          "craft_cost": 8100
+        }
+      ]
+    },
+    "shell": {
+      "_description": "炮弹 - 提供炮弹伤害和射程加成",
+      "templates": [
+        {
+          "type": "shell",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "shell_damage_bonus": 50.0,
+            "shell_range_bonus": 6.0
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "shell",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "shell_damage_bonus": 100.0,
+            "shell_range_bonus": 8.0
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "shell",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "shell_damage_bonus": 175.0,
+            "shell_range_bonus": 10.0
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "shell",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "shell_damage_bonus": 280.0,
+            "shell_range_bonus": 12.0
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "shell",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "shell_damage_bonus": 420.0,
+            "shell_range_bonus": 14.0
+          },
+          "craft_cost": 8100
+        }
+      ]
+    },
+    "armor": {
+      "_description": "装甲 - 提供防御值，减少受到的伤害",
+      "templates": [
+        {
+          "type": "armor",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "defense_bonus": 20.0
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "armor",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "defense_bonus": 40.0
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "armor",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "defense_bonus": 80.0
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "armor",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "defense_bonus": 150.0
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "armor",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "defense_bonus": 250.0
+          },
+          "craft_cost": 8100
+        }
+      ]
+    },
+    "shield": {
+      "_description": "护盾 - 提供护盾能量，优先承受伤害",
+      "templates": [
+        {
+          "type": "shield",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "shield_energy_max": 150.0
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "shield",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "shield_energy_max": 300.0
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "shield",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "shield_energy_max": 500.0
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "shield",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "shield_energy_max": 750.0
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "shield",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "shield_energy_max": 1000.0
+          },
+          "craft_cost": 8100
+        }
+      ]
+    },
+    "diving": {
+      "_description": "潜渡 - 解锁水面通行能力，调整水面移动速度倍率（白 0.50 → 金 1.50）",
+      "templates": [
+        {
+          "type": "diving",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "water_traversal": true,
+            "water_speed_penalty": 0.5
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "diving",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "water_traversal": true,
+            "water_speed_penalty": 0.75
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "diving",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "water_traversal": true,
+            "water_speed_penalty": 1.0
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "diving",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "water_traversal": true,
+            "water_speed_penalty": 1.25
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "diving",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "water_traversal": true,
+            "water_speed_penalty": 1.5
+          },
+          "craft_cost": 8100
+        }
+      ]
+    },
+    "stealth": {
+      "_description": "隐身 - 缩短敌方坦克探测距离；开炮会短暂暴露；强化提升闪避率",
+      "templates": [
+        {
+          "type": "stealth",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "detection_range_multiplier": 0.8,
+            "exposure_duration": 3.0,
+            "full_stealth": false
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "stealth",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "detection_range_multiplier": 0.75,
+            "exposure_duration": 2.5,
+            "full_stealth": false
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "stealth",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "detection_range_multiplier": 0.7,
+            "exposure_duration": 2.0,
+            "full_stealth": false
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "stealth",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "detection_range_multiplier": 0.65,
+            "exposure_duration": 1.5,
+            "full_stealth": false
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "stealth",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "detection_range_multiplier": 0.6,
+            "exposure_duration": 1.0,
+            "full_stealth": false
+          },
+          "craft_cost": 8100
+        }
+      ]
+    },
+    "radar": {
+      "_description": "雷达 - 提升战场信息感知，显示敌方单位和生产队列",
+      "templates": [
+        {
+          "type": "radar",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "detection_range": 8.0,
+            "show_enemy_health": false,
+            "show_production_queue": false,
+            "show_full_map": false,
+            "show_base_intel": false
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "radar",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "detection_range": 12.0,
+            "show_enemy_health": true,
+            "show_production_queue": false,
+            "show_full_map": false,
+            "show_base_intel": false
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "radar",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "detection_range": 16.0,
+            "show_enemy_health": true,
+            "show_production_queue": true,
+            "show_full_map": false,
+            "show_base_intel": false
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "radar",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "detection_range": 20.0,
+            "show_enemy_health": true,
+            "show_production_queue": true,
+            "show_full_map": false,
+            "show_base_intel": true
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "radar",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "detection_range": 999.0,
+            "show_enemy_health": true,
+            "show_production_queue": true,
+            "show_full_map": true,
+            "show_base_intel": true
+          },
+          "craft_cost": 8100
+        }
+      ]
+    }
+  },
+  "base_equipment": {
+    "_comment": "基地装备类型",
+    "emp": {
+      "_description": "电磁脉冲 - 自动瘫痪进入范围的敌方坦克",
+      "templates": [
+        {
+          "type": "emp",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "emp_range": 3.0,
+            "stun_duration": 2.0,
+            "disable_movement": true,
+            "disable_shooting": false,
+            "dot_damage": 0.0,
+            "cooldown": 20.0
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "emp",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "emp_range": 4.0,
+            "stun_duration": 2.0,
+            "disable_movement": true,
+            "disable_shooting": true,
+            "dot_damage": 0.0,
+            "cooldown": 18.0
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "emp",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "emp_range": 5.0,
+            "stun_duration": 3.0,
+            "disable_movement": true,
+            "disable_shooting": true,
+            "dot_damage": 6.0,
+            "cooldown": 16.0
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "emp",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "emp_range": 6.0,
+            "stun_duration": 3.0,
+            "disable_movement": true,
+            "disable_shooting": true,
+            "dot_damage": 60.0,
+            "cooldown": 14.0
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "emp",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "emp_range": 7.0,
+            "stun_duration": 4.0,
+            "disable_movement": true,
+            "disable_shooting": true,
+            "dot_damage": 150.0,
+            "cooldown": 12.0
+          },
+          "craft_cost": 8100
+        }
+      ]
+    },
+    "barrier": {
+      "_description": "壁垒 - 提供基地防御值",
+      "templates": [
+        {
+          "type": "barrier",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "defense_bonus": 30.0
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "barrier",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "defense_bonus": 70.0
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "barrier",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "defense_bonus": 150.0
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "barrier",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "defense_bonus": 280.0
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "barrier",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "defense_bonus": 450.0
+          },
+          "craft_cost": 8100
+        }
+      ]
+    },
+    "repair_machine": {
+      "_description": "抢修机 - 提供战斗维修能力，按维修速度恢复坦克耐久",
+      "templates": [
+        {
+          "type": "repair_machine",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "repair_speed": 50.0,
+            "repair_discount": 0.0
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "repair_machine",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "repair_speed": 80.0,
+            "repair_discount": 0.1
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "repair_machine",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "repair_speed": 120.0,
+            "repair_discount": 0.2
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "repair_machine",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "repair_speed": 160.0,
+            "repair_discount": 0.3
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "repair_machine",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "repair_speed": 200.0,
+            "repair_discount": 0.4
+          },
+          "craft_cost": 8100
+        }
+      ]
+    },
+    "energy_station": {
+      "_description": "能量站 - 提供护盾充能能力，自动为坦克护盾充能",
+      "templates": [
+        {
+          "type": "energy_station",
+          "rarity": 1,
+          "rarity_name": "白色",
+          "attributes": {
+            "charge_speed": 30.0,
+            "max_charge_capacity": 200.0
+          },
+          "craft_cost": 100
+        },
+        {
+          "type": "energy_station",
+          "rarity": 2,
+          "rarity_name": "蓝色",
+          "attributes": {
+            "charge_speed": 45.0,
+            "max_charge_capacity": 400.0
+          },
+          "craft_cost": 300
+        },
+        {
+          "type": "energy_station",
+          "rarity": 3,
+          "rarity_name": "紫色",
+          "attributes": {
+            "charge_speed": 65.0,
+            "max_charge_capacity": 700.0
+          },
+          "craft_cost": 900
+        },
+        {
+          "type": "energy_station",
+          "rarity": 4,
+          "rarity_name": "粉色",
+          "attributes": {
+            "charge_speed": 90.0,
+            "max_charge_capacity": 1100.0
+          },
+          "craft_cost": 2700
+        },
+        {
+          "type": "energy_station",
+          "rarity": 5,
+          "rarity_name": "金色",
+          "attributes": {
+            "charge_speed": 120.0,
+            "max_charge_capacity": 1600.0
+          },
+          "craft_cost": 8100
+        }
+      ]
+    }
+  }
+}

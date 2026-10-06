@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d2sfbxlcq4rcc"]
+
+[ext_resource type="PackedScene" uid="uid://cf6si2j5ftm4l" path="res://scenes/bullet_parent.tscn" id="1_144km"]
+[ext_resource type="Texture2D" uid="uid://d0yhnil14nlli" path="res://sprites/bullet_white_2.png" id="2_gny0m"]
+
+[node name="Bullet" unique_id=791108652 instance=ExtResource("1_144km")]
+speed = 500.0
+damage = 30
+
+[node name="Sprite2D" parent="." index="0" unique_id=2083004894]
+texture = ExtResource("2_gny0m")

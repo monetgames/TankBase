@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b1hoffqrg2bpb"]
+
+[ext_resource type="Script" uid="uid://bcsy7tumj5yf0" path="res://scripts/ui/equipment_panel.gd" id="1_equip_panel"]
+
+[node name="EquipmentPanel" type="PanelContainer" unique_id=722640744]
+custom_minimum_size = Vector2(270, 250)
+script = ExtResource("1_equip_panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1785253114]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TankSection" type="VBoxContainer" parent="VBoxContainer" unique_id=1973446135]
+layout_mode = 2
+
+[node name="TankLabel" type="Label" parent="VBoxContainer/TankSection" unique_id=361819312]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+theme_override_font_sizes/font_size = 12
+text = "坦克装备"
+
+[node name="TankSlotsGrid" type="GridContainer" parent="VBoxContainer/TankSection" unique_id=1346863084]
+layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 4
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=527877998]
+layout_mode = 2
+
+[node name="BaseSection" type="VBoxContainer" parent="VBoxContainer" unique_id=23454599]
+layout_mode = 2
+
+[node name="BaseLabel" type="Label" parent="VBoxContainer/BaseSection" unique_id=813505278]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+theme_override_font_sizes/font_size = 12
+text = "基地装备"
+
+[node name="BaseSlotsGrid" type="GridContainer" parent="VBoxContainer/BaseSection" unique_id=543276392]
+layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 4

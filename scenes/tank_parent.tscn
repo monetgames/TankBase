@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b2htvi214fs73"]
+
+[ext_resource type="Script" uid="uid://dwey6axt6vauq" path="res://scripts/tank_parent.gd" id="1_lttwv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wls2v"]
+size = Vector2(26, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t2d3v"]
+
+[node name="Tank" type="CharacterBody2D" unique_id=1565774184]
+z_index = 5
+collision_layer = 3
+collision_mask = 159
+script = ExtResource("1_lttwv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=321592142]
+shape = SubResource("RectangleShape2D_wls2v")
+
+[node name="BodySprite" type="AnimatedSprite2D" parent="." unique_id=1298899172]
+sprite_frames = SubResource("SpriteFrames_t2d3v")
+
+[node name="Turret" type="Node2D" parent="." unique_id=1736687553]
+
+[node name="TurretSprite" type="Sprite2D" parent="Turret" unique_id=90205420]
+
+[node name="Muzzle" type="Marker2D" parent="Turret" unique_id=1409665560]
+position = Vector2(0, -15)

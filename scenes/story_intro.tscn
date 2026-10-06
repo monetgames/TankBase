@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://vsw02c3pw7v6"]
+
+[ext_resource type="Script" uid="uid://bflddlpr2if46" path="res://scripts/story_intro.gd" id="1_story"]
+
+[node name="StoryIntro" type="Control" unique_id=1711860687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_story")
+
+[node name="Background" type="ColorRect" parent="." unique_id=59757728]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0470588, 0.0705882, 0.0392157, 1)
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1393569593]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=389924553]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="HBoxContainer" parent="Margin/VBox" unique_id=700520000]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Margin/VBox/Header" unique_id=77819083]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+theme_override_font_sizes/font_size = 24
+text = "作战简报"
+
+[node name="Page" type="Label" parent="Margin/VBox/Header" unique_id=150821035]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.478431, 0.521569, 0.439216, 1)
+theme_override_font_sizes/font_size = 12
+text = "简报 01 / 06"
+
+[node name="ArtPanel" type="PanelContainer" parent="Margin/VBox" unique_id=328359422]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ArtCenter" type="CenterContainer" parent="Margin/VBox/ArtPanel" unique_id=1782086630]
+layout_mode = 2
+
+[node name="Art" type="TextureRect" parent="Margin/VBox/ArtPanel/ArtCenter" unique_id=1980794656]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BodyPanel" type="PanelContainer" parent="Margin/VBox" unique_id=1534687912]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+
+[node name="BodyVBox" type="VBoxContainer" parent="Margin/VBox/BodyPanel" unique_id=1463219744]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Body" type="Label" parent="Margin/VBox/BodyPanel/BodyVBox" unique_id=469320695]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.847059, 0.878431, 0.784314, 1)
+theme_override_font_sizes/font_size = 16
+text = "……"
+autowrap_mode = 3
+
+[node name="Tip" type="Label" parent="Margin/VBox/BodyPanel/BodyVBox" unique_id=2024795906]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.937255, 0.623529, 0.152941, 1)
+theme_override_font_sizes/font_size = 14
+text = "▶ 要点：……"
+autowrap_mode = 3
+
+[node name="BottomBar" type="HBoxContainer" parent="Margin/VBox" unique_id=2014525678]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Dots" type="HBoxContainer" parent="Margin/VBox/BottomBar" unique_id=2145259395]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+
+[node name="Spacer" type="Control" parent="Margin/VBox/BottomBar" unique_id=761736960]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PrevButton" type="Button" parent="Margin/VBox/BottomBar" unique_id=466180979]
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "◀ 上一篇"
+
+[node name="NextButton" type="Button" parent="Margin/VBox/BottomBar" unique_id=799436061]
+custom_minimum_size = Vector2(150, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "继续 ▶"

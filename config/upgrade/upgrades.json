@@ -1,0 +1,59 @@
+{
+	"_comment": "黑匣升级配置。cost_per_level 为每级消耗黑匣数量，effect_per_level 为每级绝对增量。v0.2.0 再平衡（2026-09-25）：初始金币/移速/炮台/维修/充能 5 项满级提升至 10 级，满级总消耗 = 201 黑匣（约完成循环挑战第 5 轮时点满）。",
+	"tactical_backpack_capacity": {
+		"name": "战术背包扩容",
+		"description": "战术背包槽位 +1",
+		"max_level": 6,
+		"cost_per_level": [1,1,1,2,2,2],
+		"effect_per_level": 1
+	},
+	"initial_gold_bonus": {
+		"name": "初始金币加成",
+		"description": "战役初始金币 +200",
+		"max_level": 10,
+		"cost_per_level": [1,1,2,2,3,3,4,4,5,5],
+		"effect_per_level": 200
+	},
+	"tank_health": {
+		"name": "坦克耐久强化",
+		"description": "坦克最大耐久 +50 HP",
+		"max_level": 20,
+		"cost_per_level": [1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2],
+		"effect_per_level": 50
+	},
+	"tank_speed": {
+		"name": "坦克速度强化",
+		"description": "坦克移动速度 +0.1 u/s",
+		"max_level": 10,
+		"cost_per_level": [1,1,1,1,2,2,2,3,3,3],
+		"effect_per_level": 0.1
+	},
+	"turret_rotation_speed": {
+		"name": "炮台旋转强化",
+		"description": "坦克炮台旋转速度 +5°/s",
+		"max_level": 10,
+		"cost_per_level": [1,1,1,1,2,2,2,3,3,3],
+		"effect_per_level": 5
+	},
+	"base_health": {
+		"name": "基地耐久强化",
+		"description": "基地最大耐久 +250 HP",
+		"max_level": 20,
+		"cost_per_level": [1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2],
+		"effect_per_level": 250
+	},
+	"base_repair_speed": {
+		"name": "维修速度强化",
+		"description": "基地维修速度 +5 HP/s",
+		"max_level": 10,
+		"cost_per_level": [2,2,2,3,3,3,4,4,4,5],
+		"effect_per_level": 5.0
+	},
+	"base_charge_speed": {
+		"name": "充能速度强化",
+		"description": "基地充能速度 +5 能量/s",
+		"max_level": 10,
+		"cost_per_level": [2,2,2,3,3,3,4,4,4,5],
+		"effect_per_level": 5
+	}
+}

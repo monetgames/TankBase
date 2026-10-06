@@ -1,0 +1,3 @@
+[submodule "addons/godot_mcp"]
+	url = https://github.com/monetgames/godot-mcp-bridge.git
+	path = addons/godot_mcp

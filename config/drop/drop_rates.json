@@ -1,0 +1,155 @@
+{
+  "_comment": "掉落规则配置",
+  "enemy_tank": {
+    "gold": {
+      "normal": [
+        8,
+        12
+      ],
+      "elite": [
+        45,
+        55
+      ],
+      "boss": [
+        140,
+        160
+      ]
+    },
+    "blueprint_probability": {
+      "normal": 0.03,
+      "elite": 0.06,
+      "boss": 0.12
+    },
+    "blueprint_rarity_weights": {
+      "normal": {
+        "WHITE": 100
+      },
+      "elite": {
+        "WHITE": 70,
+        "BLUE": 30
+      },
+      "boss": {
+        "BLUE": 30,
+        "PURPLE": 40,
+        "PINK": 20,
+        "GOLD": 10
+      }
+    }
+  },
+  "enemy_base": {
+    "gold": {
+      "normal": [
+        80,
+        120
+      ],
+      "elite": [
+        150,
+        250
+      ],
+      "boss": [
+        300,
+        500
+      ]
+    },
+    "module": {
+      "normal": [
+        1,
+        1
+      ],
+      "elite": [
+        2,
+        3
+      ],
+      "boss": [
+        5,
+        8
+      ]
+    },
+    "blueprint_probability": {
+      "normal": 0.10,
+      "elite": 0.20,
+      "boss": 0.35
+    },
+    "blueprint_rarity_weights": {
+      "normal": {
+        "WHITE": 60,
+        "BLUE": 40
+      },
+      "elite": {
+        "WHITE": 20,
+        "BLUE": 50,
+        "PURPLE": 30
+      },
+      "boss": {
+        "BLUE": 10,
+        "PURPLE": 40,
+        "PINK": 35,
+        "GOLD": 15
+      }
+    },
+    "black_box": {
+      "normal": 0,
+      "elite": [
+        0,
+        1
+      ],
+      "boss": [
+        1,
+        1
+      ]
+    },
+    "black_box_chance": {
+      "normal": 0.0,
+      "elite": 0.75,
+      "boss": 1.0
+    }
+  },
+  "campaign_reward": {
+    "_comment": "战役胜利结算蓝图奖励：按战役组(1-10)控制稀有度与数量；第2/4/6/8组优先补齐主炮和炮弹到本档。rarity=1白/2蓝/3紫/4粉/5金",
+    "rarity_by_campaign": [
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5,
+      5,
+      5
+    ],
+    "count_by_campaign": [
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "critical_output_campaigns": [2, 4, 6, 8]
+  },
+  "smart_blueprint": {
+    "_comment": "战斗蓝图按战役限制最高稀有度；若本战役所有类型均已达到上限，蓝图事件转为金币奖励。overcap_* 为越级惊喜：整个战役掉落的蓝图里偶尔出现 2-3 件高于上限一档的蓝图（每次掉落仍只有 1 件）。",
+    "battle_rarity_cap_by_campaign": [1, 2, 2, 3, 3, 4, 4, 5, 5, 5],
+    "fallback_gold_by_rarity": [80, 180, 360, 810, 2400],
+    "overcap_campaign_chance": 0.7,
+    "overcap_count_per_campaign": [2, 3],
+    "overcap_rise_chance": 0.5
+  },
+  "_field_descriptions": {
+    "gold": "金币掉落区间 [min, max]（按单位等级）",
+    "module": "模组掉落区间 [min, max]（按基地等级）",
+    "blueprint_probability": "蓝图掉落概率（0-1）",
+    "blueprint_rarity_weights": "蓝图稀有度权重表（按来源等级，权重越高越易出）",
+    "black_box": "黑匣数量（0=不掉落；数字=固定；[min,max]=区间）",
+    "black_box_chance": "黑匣掉落概率（0-1，与 black_box 数量相乘；v0.2.0 再平衡：精英 0.75 / BOSS 1.0）",
+    "smart_blueprint.overcap_campaign_chance": "本战役出现越级蓝图的概率（0-1，每战役首次掉落时判定）",
+    "smart_blueprint.overcap_count_per_campaign": "每个战役的越级蓝图总件数区间 [min, max]",
+    "smart_blueprint.overcap_rise_chance": "有剩余名额时，单次蓝图掉落升级为「高于上限一档」的概率（0-1）",
+    "smart_blueprint.fallback_gold_by_rarity": "重复蓝图折算金币数（按稀有度 白/蓝/紫/粉/金）"
+  }
+}

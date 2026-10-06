@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://n5wfa5ktejrk"]
+
+[ext_resource type="PackedScene" uid="uid://b2htvi214fs73" path="res://scenes/tank_parent.tscn" id="1_oyqd1"]
+[ext_resource type="Script" uid="uid://cpjkgihggc6ct" path="res://scripts/tank_enemy.gd" id="2_1jugj"]
+[ext_resource type="Texture2D" uid="uid://cdilvqef51s02" path="res://sprites/tank_enemy_body_sheet.png" id="3_ubg1q"]
+[ext_resource type="Texture2D" uid="uid://bk5en1bsm1fqw" path="res://sprites/tank_enemy_turret.png" id="4_p67f1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p67f1"]
+atlas = ExtResource("3_ubg1q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlxkk"]
+atlas = ExtResource("3_ubg1q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_id2k8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p67f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlxkk")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="TankEnemy" unique_id=1101861198 instance=ExtResource("1_oyqd1")]
+collision_layer = 2
+collision_mask = 151
+script = ExtResource("2_1jugj")
+cfg_move_speed = 60.0
+cfg_shoot_cooldown = 1.0
+cfg_fire_range = 150.0
+cfg_turret_turn_speed = 100.0
+cfg_max_hp = 80
+cfg_firepower = 50
+cfg_defense = 0
+cfg_detect_range = 300.0
+cfg_scout_base_detect_range = 300.0
+ai_mode = "chase"
+ai_intelligence = 1.0
+debug_draw_path = false
+debug_path_color = Color(0, 1, 0, 1)
+debug_current_point_color = Color(1, 1, 0, 1)
+
+[node name="BodySprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_id2k8")
+animation = &"idle"
+
+[node name="TurretSprite" parent="Turret" index="0"]
+texture = ExtResource("4_p67f1")

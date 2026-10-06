@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cpptk7iypnwdj"]
+
+[ext_resource type="PackedScene" uid="uid://o80qbue0n2g5" path="res://scenes/base_parent.tscn" id="1_ggyfd"]
+[ext_resource type="Script" uid="uid://bea8v1pksaxw7" path="res://scripts/base_player.gd" id="2_vitqv"]
+[ext_resource type="PackedScene" uid="uid://dsc2g8ntorpew" path="res://scenes/tank_player.tscn" id="3_pn0q1"]
+[ext_resource type="PackedScene" uid="uid://d2sfbxlcq4rcc" path="res://scenes/bullet_white_2.tscn" id="4_1niba"]
+
+[node name="BasePlayer" unique_id=917324758 instance=ExtResource("1_ggyfd")]
+script = ExtResource("2_vitqv")
+player_tank_scene = ExtResource("3_pn0q1")
+player_bullet_scene = ExtResource("4_1niba")

@@ -1,0 +1,19 @@
+{
+  "max_health": 1000,
+  "move_speed": 3.0,
+  "turret_rotation_speed": 100,
+  "shell_damage": 0,
+  "shell_range": 6.0,
+  "shell_speed": 8.0,
+  "shoot_cooldown": 1.0,
+
+  "_comments": {
+    "max_health": "初始耐久值（裸装基准），玩家坦克的生命值上限，黑匣升级再累加",
+    "move_speed": "裸装移动速度基准（单位/秒=u/s，×20 换算像素），引擎装备在此基础上加 move_speed_bonus",
+    "turret_rotation_speed": "裸装炮台旋转速度基准（度/秒，真角速度驱动），轴承装备在此基础上加 turret_rotation_bonus",
+    "shell_damage": "裸装炮弹伤害基准（0=装备加成），实际火力 = 该值 + 炮弹装备 shell_damage_bonus",
+    "shell_range": "炮弹射程基线（u；运行时 shell_range_px = 该值×20）。因运行时坦克射程暂不读炮弹装备 shell_range_bonus，此处存白色炮弹文档值 6u 作为可玩基线",
+    "shell_speed": "炮弹速度基线（u/s；运行时 shell_speed_px = 该值×20）。因运行时坦克弹速暂不读主炮装备 shell_speed，此处存白色主炮文档值 8u/s 作为可玩基线",
+    "shoot_cooldown": "射击冷却基线（秒；对齐白色主炮 1.0s）。主炮装备用 shoot_cooldown_reduction 削减该值：蓝 0.15/紫 0.30/粉 0.45/金 0.60"
+  }
+}

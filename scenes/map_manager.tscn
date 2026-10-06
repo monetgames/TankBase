@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bs52noaamw1t3"]
+
+[ext_resource type="Script" uid="uid://dxyl2bsr1pb77" path="res://scripts/map_manager.gd" id="1_1q1v5"]
+[ext_resource type="TileSet" uid="uid://n8gs7piihmwq" path="res://maps/map_tile_set.tres" id="1_m27ba"]
+[ext_resource type="PackedScene" uid="uid://cpptk7iypnwdj" path="res://scenes/base_player.tscn" id="2_or80t"]
+[ext_resource type="PackedScene" uid="uid://b6d6bjy72waa0" path="res://scenes/base_enemy.tscn" id="3_qcnjr"]
+
+[node name="MapManager" type="Node2D" unique_id=1795133689]
+script = ExtResource("1_1q1v5")
+base_player_scene = ExtResource("2_or80t")
+base_enemy_scene = ExtResource("3_qcnjr")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=914275601]
+position = Vector2(256, 256)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=68300341]
+use_parent_material = true
+tile_set = ExtResource("1_m27ba")
+navigation_enabled = false
+
+[node name="TileMapOverlay" type="TileMapLayer" parent="." unique_id=38161532]
+z_index = 10
+use_parent_material = true
+tile_set = ExtResource("1_m27ba")
+navigation_enabled = false

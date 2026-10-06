@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dgguvjuvn2x48"]
+
+[ext_resource type="PackedScene" uid="uid://cf6si2j5ftm4l" path="res://scenes/bullet_parent.tscn" id="1_jgess"]
+[ext_resource type="Texture2D" uid="uid://44frof4khljc" path="res://sprites/bullet_white_1.png" id="2_rrgpq"]
+
+[node name="Bullet" unique_id=1797178132 instance=ExtResource("1_jgess")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=2083004894]
+texture = ExtResource("2_rrgpq")

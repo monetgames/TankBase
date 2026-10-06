@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://b8fupelwrumxh"]
+
+[ext_resource type="Script" uid="uid://c3kf3qtwyip2r" path="res://scripts/game_ui.gd" id="1_ui"]
+[ext_resource type="PackedScene" uid="uid://bjsbxxg5obkeh" path="res://scenes/game_view.tscn" id="2_view"]
+[ext_resource type="Texture2D" uid="uid://c6rxer7aql7no" path="res://sprites/base_enemy.png" id="3_u2dgd"]
+[ext_resource type="Texture2D" uid="uid://bqxvn8y7k8abc" path="res://sprites/tank_enemy.png" id="4_bt76a"]
+[ext_resource type="Script" uid="uid://hmwm5scsotyj" path="res://scripts/ui/radar_ui.gd" id="5_radar"]
+[ext_resource type="PackedScene" uid="uid://cws8v2h7q1k4p" path="res://scenes/wave_shop.tscn" id="6_shop"]
+
+[node name="GameUI" type="Control" unique_id=76916102]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ui")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1587511074]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0470588, 0.0705882, 0.0392157, 1)
+
+[node name="MainContainer" type="HBoxContainer" parent="." unique_id=1010796828]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="GameTopUI" type="VBoxContainer" parent="MainContainer" unique_id=344372670]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="GameStatusUI" type="PanelContainer" parent="MainContainer/GameTopUI" unique_id=2030288573]
+layout_mode = 2
+
+[node name="Row" type="HBoxContainer" parent="MainContainer/GameTopUI/GameStatusUI" unique_id=1297197471]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MainContainer/GameTopUI/GameStatusUI/Row" unique_id=1858082724]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+text = "关卡 1/5 波次 1/3"
+
+[node name="TimeLabel" type="Label" parent="MainContainer/GameTopUI/GameStatusUI/Row" unique_id=697782340]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.937255, 0.623529, 0.152941, 1)
+text = "时间 00:00"
+horizontal_alignment = 2
+
+[node name="GameViewFrame" type="PanelContainer" parent="MainContainer/GameTopUI" unique_id=1829015694]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GameView" parent="MainContainer/GameTopUI/GameViewFrame" unique_id=880294340 instance=ExtResource("2_view")]
+custom_minimum_size = Vector2(494, 488)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RightUI" type="VBoxContainer" parent="MainContainer" unique_id=664339479]
+custom_minimum_size = Vector2(118, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="EnemyCard" type="PanelContainer" parent="MainContainer/RightUI" unique_id=239953499]
+layout_mode = 2
+
+[node name="GameEnemyStatusUI" type="VBoxContainer" parent="MainContainer/RightUI/EnemyCard" unique_id=1821254609]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="MainContainer/RightUI/EnemyCard/GameEnemyStatusUI" unique_id=1689662589]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+text = "敌情"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/RightUI/EnemyCard/GameEnemyStatusUI" unique_id=335712654]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="EnemyBaseIcon" type="TextureRect" parent="MainContainer/RightUI/EnemyCard/GameEnemyStatusUI/HBoxContainer" unique_id=1514450292]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_u2dgd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EnemyBaseNum" type="Label" parent="MainContainer/RightUI/EnemyCard/GameEnemyStatusUI/HBoxContainer" unique_id=875297453]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.729412, 0.458824, 0.0901961, 1)
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MainContainer/RightUI/EnemyCard/GameEnemyStatusUI" unique_id=1813683735]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="EnemyTankIcon" type="TextureRect" parent="MainContainer/RightUI/EnemyCard/GameEnemyStatusUI/HBoxContainer2" unique_id=234243729]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_bt76a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EnemyTankNum" type="Label" parent="MainContainer/RightUI/EnemyCard/GameEnemyStatusUI/HBoxContainer2" unique_id=1862896809]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.294118, 0.290196, 1)
+text = "0"
+
+[node name="TankCard" type="PanelContainer" parent="MainContainer/RightUI" unique_id=797069319]
+layout_mode = 2
+
+[node name="GamePlayerTankStatusUI" type="VBoxContainer" parent="MainContainer/RightUI/TankCard" unique_id=1435968341]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="BaseCard" type="PanelContainer" parent="MainContainer/RightUI" unique_id=1590628497]
+layout_mode = 2
+
+[node name="GamePlayerBaseStatusUI" type="VBoxContainer" parent="MainContainer/RightUI/BaseCard" unique_id=132535331]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="CoinsCard" type="PanelContainer" parent="MainContainer/RightUI" unique_id=1156123882]
+layout_mode = 2
+
+[node name="GamePlayerCoinsStatusUI" type="VBoxContainer" parent="MainContainer/RightUI/CoinsCard" unique_id=107551799]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="RadarCard" type="PanelContainer" parent="MainContainer/RightUI" unique_id=427451382]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RadarBox" type="VBoxContainer" parent="MainContainer/RightUI/RadarCard" unique_id=1501140783]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="MainContainer/RightUI/RadarCard/RadarBox" unique_id=2015608411]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+text = "雷达"
+
+[node name="Radar" type="Control" parent="MainContainer/RightUI/RadarCard/RadarBox" unique_id=521324086]
+custom_minimum_size = Vector2(96, 96)
+clip_contents = true
+layout_mode = 2
+script = ExtResource("5_radar")
+
+[node name="BottomUI" type="PanelContainer" parent="." unique_id=863673784]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -54.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Row" type="HBoxContainer" parent="BottomUI" unique_id=847212776]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PropsTitle" type="Label" parent="BottomUI/Row" unique_id=1197878911]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+text = "武器"
+
+[node name="GamePropsUI" type="HBoxContainer" parent="BottomUI/Row" unique_id=1075973034]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Spacer" type="Control" parent="BottomUI/Row" unique_id=66780897]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemsTitle" type="Label" parent="BottomUI/Row" unique_id=933858142]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0.8, 0.396078, 1)
+text = "道具"
+
+[node name="GameItemsUI" type="HBoxContainer" parent="BottomUI/Row" unique_id=1290941925]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="WaveShop" parent="." unique_id=1288525559 instance=ExtResource("6_shop")]
+layout_mode = 1
+
+[node name="ToastLabel" type="Label" parent="." unique_id=1462949470]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.972549, 0.780392, 0.458824, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1

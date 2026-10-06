@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://o80qbue0n2g5"]
+
+[ext_resource type="Script" uid="uid://cu3r005y67l8n" path="res://scripts/base_parent.gd" id="1_iqern"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqern"]
+size = Vector2(32, 28)
+
+[node name="Base" type="StaticBody2D" unique_id=2013028851]
+z_index = 5
+collision_layer = 16
+collision_mask = 15
+script = ExtResource("1_iqern")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=892088340]
+position = Vector2(16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=854299076]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_iqern")

@@ -1,0 +1,29 @@
+{
+  "_comment": "战斗道具配置。icon 对应 sprites/items/ 下的同名像素图标（items_*.png）。",
+  "spawn": {
+    "interval_min": 15.0,
+    "interval_max": 20.0,
+    "lifetime": 18.0,
+    "max_active": 4,
+    "base_exclusion_radius": 64.0
+  },
+  "shield": {"icon": "res://sprites/items/items_shield.png", "duration": 10.0, "effect_value": 0.0},
+  "firepower_boost": {"icon": "res://sprites/items/items_firepower.png", "duration": 10.0, "effect_value": 1.5},
+  "speed_boost": {"icon": "res://sprites/items/items_speed.png", "duration": 10.0, "effect_value": 1.5},
+  "time_freeze": {"icon": "res://sprites/items/items_freeze.png", "duration": 5.0, "effect_value": 0.0},
+  "health_restore": {"icon": "res://sprites/items/items_health.png", "duration": 0.0, "effect_value": 0.5},
+  "mine": {
+    "_description": "地雷 - 放置在地面，敌方坦克或基地触发时爆炸",
+    "icon": "res://sprites/items/items_mine.png",
+    "pickup_amount": 5,
+    "damage_multiplier": 3.0,
+    "_note": "伤害 = 玩家当前炮弹伤害 × damage_multiplier"
+  },
+  "rocket": {
+    "_description": "火箭 - 直线飞行，命中后3×3格范围爆炸",
+    "icon": "res://sprites/items/items_rocket.png",
+    "pickup_amount": 5,
+    "damage_multiplier": 2.0,
+    "_note": "伤害 = 玩家当前炮弹伤害 × damage_multiplier"
+  }
+}

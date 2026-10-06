@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b6d6bjy72waa0"]
+
+[ext_resource type="PackedScene" uid="uid://o80qbue0n2g5" path="res://scenes/base_parent.tscn" id="1_n1jr3"]
+[ext_resource type="Script" uid="uid://clanpcgkiepno" path="res://scripts/base_enemy.gd" id="2_2kb2m"]
+[ext_resource type="PackedScene" uid="uid://n5wfa5ktejrk" path="res://scenes/tank_enemy.tscn" id="3_kegi0"]
+[ext_resource type="PackedScene" uid="uid://dgguvjuvn2x48" path="res://scenes/bullet_white_1.tscn" id="4_64ljx"]
+
+[node name="BaseEnemy" unique_id=510106415 instance=ExtResource("1_n1jr3")]
+script = ExtResource("2_2kb2m")
+enemy_tank_scene = ExtResource("3_kegi0")
+enemy_bullet_scene = ExtResource("4_64ljx")

@@ -1,0 +1,17 @@
+{
+  "_comment": "玩家基地配置文件 - 定义基地的基础属性和能力",
+  "max_health": 5000,
+  "_max_health_comment": "基地初始耐久值 5000，可通过黑匣升级提升（+250/级，满级 10000）",
+  "defense": 0,
+  "_defense_comment": "基地初始防御值，可通过装备壁垒装备提升，用于减免伤害",
+  "repair_speed": 0,
+  "_repair_speed_comment": "基地初始维修速度（HP/秒），默认为0，需装备抢修机装备才能为坦克提供维修能力",
+  "repair_cost_per_100hp": 5,
+  "_repair_cost_per_100hp_comment": "维修费用基准，每恢复100点耐久消耗的金币数量（5 金/100HP），实际费用会受抢修机装备的折扣影响（折扣当前未接入运行时）",
+  "charge_speed": 20,
+  "_charge_speed_comment": "基地初始充能速度（能量/秒，20）。当前运行时充能仅由能量站装备提供（需 max_charge_capacity>0），黑匣充能升级 +5/级 与基础值尚未接入运行时",
+  "max_charge_capacity": 0,
+  "_max_charge_capacity_comment": "基地单次战斗最大充能量，默认为0，需装备能量站装备提供充能容量，耗尽后本关无法再充能",
+  "base_range": 3.0,
+  "_base_range_comment": "基地作用范围（单位：格），坦克进入此范围内可以进行维修和充能操作"
+}

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bjsbxxg5obkeh"]
+
+[ext_resource type="PackedScene" uid="uid://bs52noaamw1t3" path="res://scenes/map_manager.tscn" id="2_map"]
+[ext_resource type="Script" uid="uid://cto03ev5d6ow8" path="res://scripts/game_view.gd" id="3_game_view"]
+
+[node name="GameView" type="Control" unique_id=1912028850]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_game_view")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1710642952]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=728515811]
+handle_input_locally = false
+size = Vector2i(640, 600)
+render_target_update_mode = 4
+
+[node name="MapManager" parent="SubViewportContainer/SubViewport" unique_id=1442695414 instance=ExtResource("2_map")]
+
+[node name="CountdownLabel" type="Label" parent="." unique_id=1651333209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.756863, 0.145098, 1)
+theme_override_font_sizes/font_size = 32

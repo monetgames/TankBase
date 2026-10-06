@@ -1,0 +1,1753 @@
+{
+  "_comment": "30 个全局关卡，每关 3 波；每三关为一次战役。基地数量前期保守，随战役和关卡递增，地图基地位置由对应 levelN.json 提供。",
+  "max_stages": 30,
+  "max_waves_per_stage": 3,
+  "first_stage_pressure": {
+    "_comment": "每次战役首关的全局压力上限。基地数按波次限制；坦克数为所有敌方工厂合计的同时在场上限。首辆敌坦克生产延迟使出生演出后至少留出约 4 秒接敌准备。",
+    "base_limits_by_campaign_band": {
+      "1_3": [2, 2, 3],
+      "4_6": [3, 3, 4],
+      "7_10": [3, 4, 5]
+    },
+    "tank_limits_by_campaign_band": {
+      "1_3": [6, 8, 10],
+      "4_6": [8, 10, 12],
+      "7_10": [10, 12, 14]
+    },
+    "first_spawn_delay_seconds": 2.0
+  },
+  "waves": [
+    {
+      "_stage": "第1关-第1波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第1关-第2波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第1关-第3波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第2关-第1波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第2关-第2波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第2关-第3波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第3关-第1波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第3关-第2波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "elite"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第3关-第3波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "elite"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第4关-第1波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第4关-第2波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第4关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第5关-第1波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第5关-第2波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第5关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第6关-第1波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第6关-第2波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第6关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第7关-第1波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第7关-第2波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第7关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第8关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第8关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第8关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第9关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第9关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第9关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第10关-第1波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第10关-第2波",
+      "enemy_bases": [
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第10关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第11关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第11关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第11关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第12关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第12关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第12关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第13关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第13关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第13关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第14关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第14关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第14关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第15关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第15关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第15关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第16关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第16关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第16关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第17关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第17关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第17关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第18关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第18关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第18关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第19关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第19关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第19关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第20关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第20关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第20关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第21关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第21关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第21关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第22关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第22关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第22关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第23关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第23关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第23关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第24关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第24关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第24关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第25关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第25关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第25关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第26关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第26关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第26关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第27关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第27关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第27关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第28关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第28关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第28关-第3波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第29关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第29关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第29关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第30关-第1波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第30关-第2波",
+      "enemy_bases": [
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    },
+    {
+      "_stage": "第30关-第3波",
+      "enemy_bases": [
+        {
+          "level": "boss"
+        },
+        {
+          "level": "boss"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "elite"
+        },
+        {
+          "level": "normal"
+        }
+      ],
+      "wave_interval": 3
+    }
+  ],
+  "loot_gather_interval": 3
+}
